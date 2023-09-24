@@ -9,11 +9,11 @@
 #include <string>
 #include <iostream>
 //using namespace std;
+int lena;
 
 int main() {
 	std::string stroka;
 	char help;
-	int lena;
     std::cout << "Write text : " << std::endl;
 	std::getline(std::cin, stroka);
 	std::cout << stroka << std::endl;
@@ -27,12 +27,11 @@ int main() {
 			}
 		}
 	}
-	for (int i = 0; i < lena; ++i) {
-		if (isalpha(stroka[i])) {
-			
-		}
-		if (isdigit(stroka[i])) {
-
+	for (int i = 0; i < lena; i++) {
+		if (isalpha(stroka[i]) == false) {
+			stroka.erase(i, 2);
+			lena = lena - 2;
+			std::cout << stroka << std::endl;
 		}
 	}
 	std::cout << "We made this: " << stroka << std::endl;
