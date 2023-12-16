@@ -20,6 +20,17 @@ class Walk : public Service {
 	std::string need_to_know;
 };
 
-class Company {
+class Dogwalk {
+	std::string nameofDog;//???Service
+	std::string nameofEmployee; //?Employee
+	std::string ratingofCompany;
+
+
+};
+
+class Employee {
+	std::string ratingofEmployee;
+	std::string has_penalties;
+
 
 };
