@@ -7,17 +7,17 @@ public:
 		this->nameofEmployee = nameofEmployee;
 		
 	}
-	//Dogwalk(std::string nameofDog) {
-	//	this->nameofDog= nameofDog;
-	//}
+	Dogwalk(std::string nameofDog) {
+		this->nameofDog= nameofDog;
+	}
 	//std::string ratingofCompany = "10";
-	void print() const
+	void print() 
 	{
-		std::cout << "Employee's name: " << nameofEmployee << std::endl;
+		std::cout << "Employee's name: " << nameofEmployee << "Dog's name: " << nameofDog << std::endl;
 	}
 	
 private:
-	//std::string nameofDog;
+	std::string nameofDog;
 	std::string nameofEmployee;
 };
 
@@ -25,14 +25,14 @@ private:
 class Employee: public Dogwalk {
 	// из Dogwalk берем имя сотрудника
 public:
-	Employee(std::string ratingofEmployee, std::string has_penalties) :Dogwalk(nameofEmployee) {
+	Employee(std::string nameofEmployee, std::string ratingofEmployee, std::string has_penalties) : Dogwalk(nameofEmployee) {
 		this->ratingofEmployee = ratingofEmployee;
 		this->has_penalties = has_penalties;
 	}
-	/*void print()
+	void print()
 	{
-		std::cout << "Name: " << nameofEmployee << "\tRating: " << ratingofEmployee << std::endl;
-	}*/
+		std::cout << "Penalties: " << has_penalties << "\tRating: " << ratingofEmployee << std::endl;
+	}
 private:
 	std::string ratingofEmployee;
 	std::string has_penalties;
@@ -40,10 +40,10 @@ private:
 };
 
 //"Машины", в моем случае услуга
-/*class Service : public Dogwalk {
+class Service : public Dogwalk {
 public:
 	//Из Dogwalk берем имя собаки
-	Service(unsigned timeofService,	std::string is_it_a_difficult_dog, std::string costofService): Dogwalk(nameofDog) {
+	Service(std::string nameofDog, unsigned timeofService,	std::string is_it_a_difficult_dog, std::string costofService): Dogwalk(nameofDog) {
 		this->timeofService = timeofService;
 		this->is_it_a_difficult_dog = is_it_a_difficult_dog;
 		this->costofService = costofService;
@@ -55,7 +55,7 @@ private:
 	void print()
 	{
 		
-		std::cout << "Dog name: " << nameofDog << "\tDifficult Dog?: " << is_it_a_difficult_dog << std::endl;
+		std::cout  << "Difficult Dog?: " << is_it_a_difficult_dog << std::endl;
 		std::cout << "Time of service: " << timeofService <<"\tCost: " << costofService << std::endl;
 	}
 
@@ -82,10 +82,10 @@ public:
 		std::cout << "Interaction with other dogs?: " << interaction_with_other_dogs << "\tNeed to know: " << need_to_know << std::endl;
 	}
 };
-*/
+
 int main() {
 	Dogwalk dogwalk1{"Helen"};
 	dogwalk1.print();
-	Employee employee{ "10","No","Helen"};
+	Employee employee{"Helen","10","No"};
 	employee.print();
 }
